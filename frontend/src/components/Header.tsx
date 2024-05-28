@@ -5,6 +5,7 @@ import { IoClose } from "react-icons/io5";
 // import { MdOutlineLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 import Button from "./UI/Button";
+import DropDownMenu from "./DropDownMenu";
 
 const Navbar = () => {
   const [isOpenNav, setIsOpenNav] = useState(false);
@@ -18,9 +19,14 @@ const Navbar = () => {
             <FiMenu size={33} />
           </Button>
         </div>
-        <Button className="text-[23px] md:text-[30px]">
-          <MdDarkMode />
-        </Button>
+
+        <div className="relative flex">
+          <Button className="text-[23px] md:text-[30px]">
+            <MdDarkMode />
+          </Button>
+          <DropDownMenu />
+        </div>
+
         <Button className="text-[23px] md:text-[30px]">
           <CiSearch />
         </Button>
