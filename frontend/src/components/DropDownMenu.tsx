@@ -5,14 +5,14 @@ import Button from "./UI/Button";
 import useDarkMode from "../hooks/useDarkMode";
 
 const DropDownMenu = () => {
-  const { setColorMode } = useDarkMode();
+  const { setTheme } = useDarkMode();
 
   return (
     <ul className="drop-down-menu">
       <li className="rounded-md px-3 hover:bg-slate-100">
         <Button
           className="flex items-center justify-between gap-4 rounded-md text-lg "
-          onClick={() => setColorMode("dark")}
+          onClick={() => setTheme("dark")}
         >
           <MdDarkMode />
           <span>تاریک</span>
@@ -21,7 +21,7 @@ const DropDownMenu = () => {
       <li className="rounded-md px-3 hover:bg-slate-100">
         <Button
           className="flex items-center justify-between gap-4 rounded-md text-lg "
-          onClick={() => setColorMode("light")}
+          onClick={() => setTheme("light")}
         >
           <MdOutlineLightMode />
           <span>روشن</span>
@@ -30,7 +30,7 @@ const DropDownMenu = () => {
       <li className="rounded-md px-3 hover:bg-slate-100">
         <Button
           className="flex items-center justify-between gap-4 rounded-md text-lg "
-          onClick={() => setColorMode("system")}
+          onClick={() => setTheme("system")}
         >
           <RiComputerLine />
           <span>سیستم</span>

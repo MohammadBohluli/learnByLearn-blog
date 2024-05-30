@@ -1,19 +1,24 @@
 import { useState, useEffect } from "react";
+import useStore from "../store/store";
 
 const useDarkMode = () => {
-  const mode = localStorage.getItem("theme");
-  const [colorMode, setColorMode] = useState<string | null>(mode);
+  const { theme, setTheme } = useStore((state) => ({
+    theme: state.theme,
+    setTheme: state.setTheme,
+  }));
+  // const mode = localStorage.getItem("theme");
+  // const [colorMode, setColorMode] = useState<string | null>(mode);
   // detect dark mode user's system is enable or not
   const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
   const rootElement = document.documentElement.classList;
 
   useEffect(() => {
-    if (colorMode === "dark") {
+    if (theme === "dark") {
       rootElement.add("dark");
       localStorage.theme = "dark";
     }
 
-    if (colorMode === "light") {
+    if (theme === "light") {
       rootElement.remove("dark");
       localStorage.theme = "light";
     }
@@ -21,7 +26,7 @@ const useDarkMode = () => {
     // for the first time user open the site and
     //color theme is determined based on the user's system theme mode
     if (
-      colorMode === "system" ||
+      theme === "system" ||
       (!("theme" in localStorage) && systemTheme.matches)
     ) {
       localStorage.removeItem("theme");
@@ -30,9 +35,9 @@ const useDarkMode = () => {
         ? rootElement.add("dark")
         : rootElement.remove("dark");
     }
-  }, [colorMode]);
+  }, [theme]);
 
-  return { colorMode, setColorMode };
+  return { theme, setTheme };
 };
 
 export default useDarkMode;

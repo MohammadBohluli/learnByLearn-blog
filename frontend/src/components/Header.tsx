@@ -2,10 +2,10 @@ import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
-// import { MdOutlineLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 import Button from "./UI/Button";
 import DropDownMenu from "./DropDownMenu";
+import useStore from "../store/store";
 
 const Navbar = () => {
   const [isOpenNav, setIsOpenNav] = useState(false);
