@@ -9,27 +9,27 @@ const DropDownMenu = () => {
 
   return (
     <ul className="drop-down-menu">
-      <li>
+      <li className="rounded-md px-3 hover:bg-slate-100">
         <Button
-          className="flex items-center justify-between gap-4 text-lg"
+          className="flex items-center justify-between gap-4 rounded-md text-lg "
           onClick={() => setColorMode("dark")}
         >
           <MdDarkMode />
           <span>تاریک</span>
         </Button>
       </li>
-      <li>
+      <li className="rounded-md px-3 hover:bg-slate-100">
         <Button
-          className="flex items-center justify-between gap-4 text-lg"
+          className="flex items-center justify-between gap-4 rounded-md text-lg "
           onClick={() => setColorMode("light")}
         >
           <MdOutlineLightMode />
           <span>روشن</span>
         </Button>
       </li>
-      <li>
+      <li className="rounded-md px-3 hover:bg-slate-100">
         <Button
-          className="flex items-center justify-between gap-4 text-lg"
+          className="flex items-center justify-between gap-4 rounded-md text-lg "
           onClick={() => setColorMode("system")}
         >
           <RiComputerLine />
