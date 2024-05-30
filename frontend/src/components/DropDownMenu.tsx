@@ -2,39 +2,10 @@ import { MdOutlineLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 import { RiComputerLine } from "react-icons/ri";
 import Button from "./UI/Button";
-import { useEffect, useState } from "react";
+import useDarkMode from "../hooks/useDarkMode";
 
 const DropDownMenu = () => {
-  const mode = localStorage.getItem("theme");
-  const [colorMode, setColorMode] = useState<string | null>(mode);
-  // detect dark mode user's system is enable or not
-  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
-  const rootElement = document.documentElement.classList;
-
-  useEffect(() => {
-    if (colorMode === "dark") {
-      rootElement.add("dark");
-      localStorage.theme = "dark";
-    }
-
-    if (colorMode === "light") {
-      rootElement.remove("dark");
-      localStorage.theme = "light";
-    }
-
-    // for the first time user open the site and
-    //color theme is determined based on the user's system theme mode
-    if (
-      colorMode === "system" ||
-      (!("theme" in localStorage) && systemTheme.matches)
-    ) {
-      localStorage.removeItem("theme");
-
-      systemTheme.matches
-        ? rootElement.add("dark")
-        : rootElement.remove("dark");
-    }
-  }, [colorMode]);
+  const { setColorMode } = useDarkMode();
 
   return (
     <ul className="drop-down-menu">
@@ -59,10 +30,7 @@ const DropDownMenu = () => {
       <li>
         <Button
           className="flex items-center justify-between gap-4 text-lg"
-          onClick={() => {
-            // localStorage.removeItem("theme");
-            setColorMode("system");
-          }}
+          onClick={() => setColorMode("system")}
         >
           <RiComputerLine />
           <span>سیستم</span>
