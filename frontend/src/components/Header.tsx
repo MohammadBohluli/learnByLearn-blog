@@ -35,7 +35,7 @@ const Navbar = () => {
       <div
         className={`fixed left-0 right-0 top-0 flex  h-screen flex-col 
                   bg-white/95 transition-transform duration-700 md:static 
-                  md:h-full md:translate-x-0 ${toggleNavbar}`}
+                  md:h-full md:translate-x-0 ${toggleNavbar} dark:bg-slate-600`}
       >
         <div className="p-3 md:hidden">
           <Button onClick={() => setIsOpenNav(false)}>
