@@ -4,11 +4,11 @@ import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 import Button from "./UI/Button";
-import DropDownMenu from "./DropDownMenu";
+import DropDownThemeMenu from "./DropDownThemeMenu";
 import useStore from "../store/store";
 import { RiComputerLine } from "react-icons/ri";
 
-const Navbar = () => {
+const Header = () => {
   const [isOpenNav, setIsOpenNav] = useState<boolean>(false);
   const { isOpenDropDownTheme, setIsOpenDropDownTheme } = useStore((state) => ({
     isOpenDropDownTheme: state.isOpenDropDownTheme,
@@ -42,7 +42,9 @@ const Navbar = () => {
               <RiComputerLine />
             )}
           </Button>
-          {isOpenDropDownTheme && <DropDownMenu />}
+          <DropDownThemeMenu
+            dispaly={isOpenDropDownTheme ? `block` : `hidden`}
+          />
         </div>
 
         <Button className="text-[23px] md:text-[30px]">
@@ -76,4 +78,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
