@@ -7,6 +7,7 @@ import Button from "./UI/Button";
 import DropDownThemeMenu from "./DropDownThemeMenu";
 import useStore from "../store/store";
 import { RiComputerLine } from "react-icons/ri";
+import Logo from "./Logo";
 
 const Header = () => {
   const [isOpenNav, setIsOpenNav] = useState<boolean>(false);
@@ -78,9 +79,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <div className=" font-vibes text-[27px] md:text-[35px] lg:text-[45px]">
-        LearnByLearn
-      </div>
+      <Logo />
     </header>
   );
 };
