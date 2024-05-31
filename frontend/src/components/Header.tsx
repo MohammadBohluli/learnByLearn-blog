@@ -9,7 +9,12 @@ import useStore from "../store/store";
 import { RiComputerLine } from "react-icons/ri";
 
 const Navbar = () => {
-  const [isOpenNav, setIsOpenNav] = useState(false);
+  const [isOpenNav, setIsOpenNav] = useState<boolean>(false);
+  const { isOpenDropDownTheme, setIsOpenDropDownTheme } = useStore((state) => ({
+    isOpenDropDownTheme: state.isOpenDropDownTheme,
+    setIsOpenDropDownTheme: state.setIsOpenDropDownTheme,
+  }));
+
   const theme = useStore((state) => state.theme);
 
   const toggleNavbar = isOpenNav ? "translate-x-0" : "translate-x-full";
@@ -23,7 +28,10 @@ const Navbar = () => {
         </div>
 
         <div className="relative flex">
-          <Button className="text-[23px] md:text-[30px]">
+          <Button
+            className="text-[23px] md:text-[30px]"
+            onClick={() => setIsOpenDropDownTheme(!isOpenDropDownTheme)}
+          >
             {theme ? (
               theme === "dark" ? (
                 <MdDarkMode />
@@ -33,9 +41,8 @@ const Navbar = () => {
             ) : (
               <RiComputerLine />
             )}
-            {/* {theme === "dark" ? <MdDarkMode /> : <MdOutlineLightMode />} */}
           </Button>
-          <DropDownMenu />
+          {isOpenDropDownTheme && <DropDownMenu />}
         </div>
 
         <Button className="text-[23px] md:text-[30px]">

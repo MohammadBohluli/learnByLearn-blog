@@ -3,6 +3,7 @@ import { UISlice, UIState } from "../types/uiType";
 
 const initialState: UIState = {
   theme: localStorage.getItem("theme"),
+  isOpenDropDownTheme: false,
 };
 
 export const createUISlice: StateCreator<
@@ -15,5 +16,9 @@ export const createUISlice: StateCreator<
   setTheme: (themeMode: string | null) =>
     set((state) => {
       state.theme = themeMode;
+    }),
+  setIsOpenDropDownTheme: (isOpen: boolean) =>
+    set((state) => {
+      state.isOpenDropDownTheme = isOpen;
     }),
 });
