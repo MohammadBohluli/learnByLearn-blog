@@ -8,17 +8,18 @@ import DropDownThemeMenu from "./DropDownThemeMenu";
 import useStore from "../store/store";
 import { RiComputerLine } from "react-icons/ri";
 import Logo from "./Logo";
+import Navabr from "./Navabr";
 
 const Header = () => {
   const [isOpenNav, setIsOpenNav] = useState<boolean>(false);
+  const theme = useStore((state) => state.theme);
   const { isOpenDropDownTheme, setIsOpenDropDownTheme } = useStore((state) => ({
     isOpenDropDownTheme: state.isOpenDropDownTheme,
     setIsOpenDropDownTheme: state.setIsOpenDropDownTheme,
   }));
 
-  const theme = useStore((state) => state.theme);
-
   const toggleNavbar = isOpenNav ? "translate-x-0" : "translate-x-full";
+
   return (
     <header
       className=" flex items-center justify-between text-slate-900
@@ -66,18 +67,7 @@ const Header = () => {
             <IoClose size={35} />
           </Button>
         </div>
-        <nav>
-          <ul
-            className="flex flex-col gap-7 text-center text-2xl font-[500] 
-             md:flex-row dark:bg-slate-900 "
-          >
-            <li>خانه</li>
-            <li>وبلاگ</li>
-            <li>دسته بندی</li>
-            <li>پروژه ها</li>
-            <li>درباره</li>
-          </ul>
-        </nav>
+        <Navabr />
       </div>
       <Logo />
     </header>
