@@ -2,13 +2,15 @@ import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
-import { MdDarkMode } from "react-icons/md";
+import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 import Button from "./UI/Button";
 import DropDownMenu from "./DropDownMenu";
 import useStore from "../store/store";
+import { RiComputerLine } from "react-icons/ri";
 
 const Navbar = () => {
   const [isOpenNav, setIsOpenNav] = useState(false);
+  const theme = useStore((state) => state.theme);
 
   const toggleNavbar = isOpenNav ? "translate-x-0" : "translate-x-full";
   return (
@@ -22,7 +24,16 @@ const Navbar = () => {
 
         <div className="relative flex">
           <Button className="text-[23px] md:text-[30px]">
-            <MdDarkMode />
+            {theme ? (
+              theme === "dark" ? (
+                <MdDarkMode />
+              ) : (
+                <MdOutlineLightMode />
+              )
+            ) : (
+              <RiComputerLine />
+            )}
+            {/* {theme === "dark" ? <MdDarkMode /> : <MdOutlineLightMode />} */}
           </Button>
           <DropDownMenu />
         </div>

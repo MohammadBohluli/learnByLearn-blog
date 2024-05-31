@@ -12,7 +12,7 @@ export const createUISlice: StateCreator<
   UISlice
 > = (set) => ({
   ...initialState,
-  setTheme: (themeMode: string) =>
+  setTheme: (themeMode: string | null) =>
     set((state) => {
       state.theme = themeMode;
     }),

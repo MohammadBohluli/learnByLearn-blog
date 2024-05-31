@@ -30,7 +30,7 @@ const DropDownMenu = () => {
       <li className="rounded-md px-3 hover:bg-slate-100">
         <Button
           className="flex items-center justify-between gap-4 rounded-md text-lg "
-          onClick={() => setTheme("system")}
+          onClick={() => setTheme(null)}
         >
           <RiComputerLine />
           <span>سیستم</span>

@@ -3,7 +3,7 @@ export type UIState = {
 };
 
 type UIActions = {
-  setTheme: (themeMode: string) => void;
+  setTheme: (themeMode: string | null) => void;
 };
 
 export type UISlice = UIState & UIActions;
