@@ -19,7 +19,10 @@ const Header = () => {
 
   const toggleNavbar = isOpenNav ? "translate-x-0" : "translate-x-full";
   return (
-    <header className=" flex items-center justify-between text-gray-900 ">
+    <header
+      className=" flex items-center justify-between text-slate-900
+    dark:text-slate-200"
+    >
       <div className="flex gap-4">
         <div className="flex md:hidden">
           <Button onClick={() => setIsOpenNav(true)}>
@@ -55,7 +58,7 @@ const Header = () => {
       <div
         className={`fixed left-0 right-0 top-0 flex  h-screen flex-col 
                   bg-white/95 transition-transform duration-700 md:static 
-                  md:h-full md:translate-x-0 ${toggleNavbar} dark:bg-slate-600`}
+                  md:h-full md:translate-x-0 dark:bg-slate-900/95 ${toggleNavbar}`}
       >
         <div className="p-3 md:hidden">
           <Button onClick={() => setIsOpenNav(false)}>
@@ -63,7 +66,11 @@ const Header = () => {
           </Button>
         </div>
         <nav>
-          <ul className="flex flex-col gap-7 text-center text-2xl font-[500] md:flex-row">
+          <ul
+            className="flex flex-col gap-7 text-center text-2xl font-[500] 
+             md:flex-row dark:bg-slate-900 "
+          >
+            <li>خانه</li>
             <li>وبلاگ</li>
             <li>دسته بندی</li>
             <li>پروژه ها</li>

@@ -4,12 +4,13 @@
 
 @layer components {
   .drop-down-menu {
-    @apply absolute -right-2 top-[45px] flex flex-col gap-3 rounded-lg
-    border-[1px] border-solid border-gray-300 bg-white px-2 py-3 shadow-lg
+    @apply absolute -right-2 top-[45px] flex flex-col gap-3 rounded-lg border-[1px]
+    border-solid border-gray-300 bg-white px-2 py-3 shadow-lg before:absolute before:right-[15px]
+    before:top-[-9px]
     
-    before:absolute before:right-[15px] before:top-[-9px] 
-    before:h-4 before:w-4 before:rotate-45 before:border-l-[1px] 
-    before:border-t-[1px] before:border-solid before:border-gray-300 
-    before:bg-white before:content-[''];
+    before:h-4 before:w-4 before:rotate-45 
+    before:border-l-[1px] before:border-t-[1px] before:border-solid before:border-gray-300 
+    before:bg-white before:content-[''] dark:border-slate-700 
+    dark:bg-slate-800 dark:text-slate-300 before:dark:border-slate-700 before:dark:bg-slate-800;
   }
 }

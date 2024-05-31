@@ -25,7 +25,7 @@ const DropDownThemeMenu = ({ dispaly }: Props) => {
         {options.map((option) => (
           <li
             key={option.id}
-            className={`rounded-md px-3 hover:bg-slate-100 ${selectedMode === option.id ? `bg-slate-100` : ``}`}
+            className={`rounded-md px-3 hover:bg-slate-100 dark:hover:bg-slate-500 ${selectedMode === option.id ? `bg-slate-100 dark:bg-slate-500` : ``}`}
           >
             <Button
               className="flex items-center justify-between gap-4 rounded-md text-lg "
