@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Navabr = () => {
   return (
     <nav>
@@ -5,11 +7,19 @@ const Navabr = () => {
         className="flex flex-col gap-7 text-center text-2xl font-[500] 
      md:flex-row dark:bg-slate-900 "
       >
-        <li>خانه</li>
-        <li>وبلاگ</li>
+        <li>
+          <Link to={"/"}>خانه</Link>
+        </li>
+        <li>
+          <Link to={"/blog"}>وبلاگ</Link>
+        </li>
         <li>دسته بندی</li>
-        <li>پروژه ها</li>
-        <li>درباره</li>
+        <li>
+          <Link to={"/projects"}>پروژه ها</Link>
+        </li>
+        <li>
+          <Link to={"/about"}>درباره</Link>
+        </li>
       </ul>
     </nav>
   );
