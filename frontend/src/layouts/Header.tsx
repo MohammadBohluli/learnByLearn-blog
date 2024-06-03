@@ -24,8 +24,8 @@ const Header = () => {
 
   return (
     <header
-      className=" flex items-center justify-between text-slate-900
-    dark:text-slate-200"
+      className=" mb-12 flex items-center justify-between
+    text-slate-900 dark:text-slate-200"
     >
       <div className="flex gap-4">
         <div className="flex md:hidden">

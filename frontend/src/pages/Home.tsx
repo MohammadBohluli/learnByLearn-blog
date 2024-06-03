@@ -1,5 +1,11 @@
+import PersonalCartInfo from "../components/PersonalCartInfo";
+
 const Home = () => {
-  return <div>خانه</div>;
+  return (
+    <>
+      <PersonalCartInfo />
+    </>
+  );
 };
 
 export default Home;
