@@ -9,6 +9,8 @@ import useStore from "../store/store";
 import { RiComputerLine } from "react-icons/ri";
 import Logo from "./Logo";
 import Navabr from "./Navabr";
+import Modal from "./UI/Modal";
+import Search from "./Search";
 
 const Header = () => {
   const [isOpenNav, setIsOpenNav] = useState<boolean>(false);
@@ -52,9 +54,16 @@ const Header = () => {
           />
         </div>
 
-        <Button className="text-[23px] md:text-[30px]">
-          <CiSearch />
-        </Button>
+        <Modal>
+          <Modal.Open openName="open-search-box">
+            <Button className="text-[23px] md:text-[30px]">
+              <CiSearch />
+            </Button>
+          </Modal.Open>
+          <Modal.Window openName="open-search-box">
+            <Search />
+          </Modal.Window>
+        </Modal>
       </div>
 
       <div
