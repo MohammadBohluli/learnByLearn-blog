@@ -3,14 +3,14 @@ import { CiSearch } from "react-icons/ci";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
-import Button from "./UI/Button";
-import DropDownThemeMenu from "./DropDownThemeMenu";
+import Button from "../components/UI/Button";
+import DropDownThemeMenu from "../components/DropDownThemeMenu";
 import useStore from "../store/store";
 import { RiComputerLine } from "react-icons/ri";
-import Logo from "./Logo";
+import Logo from "../components/Logo";
 import Navabr from "./Navabr";
-import Modal from "./UI/Modal";
-import Search from "./Search";
+import Modal from "../components/UI/Modal";
+import Search from "../components/Search";
 
 const Header = () => {
   const [isOpenNav, setIsOpenNav] = useState<boolean>(false);
