@@ -1,5 +1,11 @@
+import ArticleList from "../features/articles/ArticleList";
+
 const Blog = () => {
-  return <div>وبلاگ</div>;
+  return (
+    <>
+      <ArticleList />
+    </>
+  );
 };
 
 export default Blog;
