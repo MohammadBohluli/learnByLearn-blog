@@ -1,18 +1,14 @@
 import { FaGithub, FaLinkedinIn, FaTelegram } from "react-icons/fa6";
-import { FiMail } from "react-icons/fi";
-import { LuBackpack } from "react-icons/lu";
-import { MdOutlinePhoneAndroid } from "react-icons/md";
-import { SlLocationPin } from "react-icons/sl";
 
 const PersonalCartInfo = () => {
   const information = [
-    { title: "Front-end Developer", icon: <LuBackpack /> },
-    { title: "IRAN/Tehran", icon: <SlLocationPin /> },
-    { title: "mohammad.bohluli.8789@gmail.com", icon: <FiMail /> },
-    { title: "09017962900", icon: <MdOutlinePhoneAndroid /> },
+    { title: "Front-end Developer", icon: "👨‍💻" },
+    { title: "IRAN/Tehran", icon: "🏠" },
+    { title: "mohammad.bohluli.8789@gmail.com", icon: "✉️" },
+    { title: "09017962900", icon: "📞" },
   ];
   return (
-    <div className="personal-cart-shadow border-color-theme max-w-96 overflow-hidden rounded-lg border">
+    <div className="heading-text-color personal-cart-shadow border-color-theme max-w-96 overflow-hidden rounded-lg border">
       <div className="h-auto max-w-full">
         <img src="/desktop.png" alt="personal" />
       </div>
