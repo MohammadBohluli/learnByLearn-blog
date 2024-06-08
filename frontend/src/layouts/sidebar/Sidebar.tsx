@@ -1,37 +1,31 @@
 import { TbChevronLeftPipe, TbChevronRightPipe } from "react-icons/tb";
 import { ReactNode, createContext, useContext, useState } from "react";
-import Button from "./UI/Button";
-import Tooltip from "./UI/tooltip/Tooltip";
-interface SidebarContextType {
-  expanded: boolean;
-}
+import Logo from "../../components/Logo";
+import Button from "../../components/UI/Button";
+import Tooltip from "../../components/UI/tooltip/Tooltip";
+import { PropsSidebarItem, SidebarContextType } from "./type";
 
 const SidebarContext = createContext<SidebarContextType>({
   expanded: true,
 });
 
-interface Props {
-  children: ReactNode;
-}
-
-const Sidebar = ({ children }: Props) => {
+const Sidebar = ({ children }: { children: ReactNode }) => {
   const [expanded, setExpanded] = useState<boolean>(true);
 
   return (
     <SidebarContext.Provider value={{ expanded }}>
       <aside className="flex h-screen">
-        <nav className="flex h-full flex-col border-l shadow-sm">
+        <nav className="flex h-full flex-col border-l shadow-sm dark:border-slate-800">
           <div className="flex items-center justify-between p-4 pb-2">
-            <img
-              src="https://img.logoipsum.com/243.svg"
-              alt=""
-              className={`overflow-hidden transition-all ${expanded ? "w-32" : "w-0"}`}
+            <Logo
+              className={`overflow-hidden transition-all lg:text-[38px] dark:text-white
+                ${expanded ? "w-52" : "w-0"}`}
             />
             <Button
               onClick={() => setExpanded(!expanded)}
-              className="rounded-lg bg-gray-50 p-1.5 hover:bg-gray-100"
+              className=" rounded-lg bg-gray-300 p-1.5  hover:bg-slate-700/50 dark:bg-slate-700"
             >
-              {expanded ? <TbChevronLeftPipe /> : <TbChevronRightPipe />}
+              {expanded ? <TbChevronRightPipe /> : <TbChevronLeftPipe />}
             </Button>
           </div>
           <ul className="flex-1 px-3">{children}</ul>
@@ -40,12 +34,6 @@ const Sidebar = ({ children }: Props) => {
     </SidebarContext.Provider>
   );
 };
-
-interface PropsSidebarItem {
-  icon: ReactNode;
-  text: string;
-  active?: boolean;
-}
 
 export const SidebarItem = ({ icon, text, active }: PropsSidebarItem) => {
   const { expanded } = useContext(SidebarContext);

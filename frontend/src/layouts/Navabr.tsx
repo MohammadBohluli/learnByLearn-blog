@@ -5,7 +5,7 @@ const Navabr = () => {
     <nav>
       <ul
         className="flex flex-col gap-7 text-center text-2xl font-[500] 
-     md:flex-row dark:bg-slate-900 "
+     lg:flex-row dark:bg-slate-900 "
       >
         <li>
           <Link to={"/"}>خانه</Link>
@@ -13,7 +13,9 @@ const Navabr = () => {
         <li>
           <Link to={"/blog"}>وبلاگ</Link>
         </li>
-        <li>دسته بندی</li>
+        <li>
+          <Link to={"/dashboard"}>مدیریت</Link>
+        </li>
         <li>
           <Link to={"/projects"}>پروژه ها</Link>
         </li>

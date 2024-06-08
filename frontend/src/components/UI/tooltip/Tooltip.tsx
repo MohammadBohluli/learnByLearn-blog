@@ -1,4 +1,4 @@
-import { TooltipProps, tooltip } from "./tooltipType";
+import { TooltipProps, tooltip } from "./type";
 
 const Tooltip = (props: TooltipProps) => {
   const { message, children, visible, placement, offset = 5 } = props;

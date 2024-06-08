@@ -28,7 +28,7 @@ const Header = () => {
     text-slate-900 dark:text-slate-200"
     >
       <div className="flex gap-4">
-        <div className="flex md:hidden">
+        <div className="flex lg:hidden">
           <Button onClick={() => setIsOpenNav(true)}>
             <FiMenu size={33} />
           </Button>
@@ -68,10 +68,10 @@ const Header = () => {
 
       <div
         className={`fixed left-0 right-0 top-0 flex  h-screen flex-col 
-                  bg-white/95 transition-transform duration-700 md:static 
-                  md:h-full md:translate-x-0 dark:bg-slate-900/95 ${toggleNavbar}`}
+                  bg-white/95 transition-transform duration-700 lg:static 
+                  lg:h-full lg:translate-x-0 dark:bg-slate-900/95 ${toggleNavbar}`}
       >
-        <div className="p-3 md:hidden">
+        <div className="p-3 lg:hidden">
           <Button onClick={() => setIsOpenNav(false)}>
             <IoClose size={35} />
           </Button>
