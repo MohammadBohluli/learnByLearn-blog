@@ -20,7 +20,7 @@ const AdminLayout = () => {
             ))}
           </Sidebar>
         </aside>
-        <main className="">
+        <main className="p-12">
           <Outlet />
         </main>
       </div>
