@@ -14,23 +14,21 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
 
   return (
     <SidebarContext.Provider value={{ expanded }}>
-      <aside className="flex h-screen">
-        <nav className="flex h-full flex-col border-l shadow-sm dark:border-slate-800">
-          <div className="flex items-center justify-between p-4 pb-2">
-            <Logo
-              className={`overflow-hidden transition-all lg:text-[38px] dark:text-white
+      <nav className="flex h-full flex-col border-l shadow-sm dark:border-slate-800">
+        <div className="flex items-center justify-between p-4 pb-2">
+          <Logo
+            className={`overflow-hidden transition-all lg:text-[38px] dark:text-white
                 ${expanded ? "w-52" : "w-0"}`}
-            />
-            <Button
-              onClick={() => setExpanded(!expanded)}
-              className=" rounded-lg bg-gray-300 p-1.5  hover:bg-slate-700/50 dark:bg-slate-700"
-            >
-              {expanded ? <TbChevronRightPipe /> : <TbChevronLeftPipe />}
-            </Button>
-          </div>
-          <ul className="flex-1 px-3">{children}</ul>
-        </nav>
-      </aside>
+          />
+          <Button
+            onClick={() => setExpanded(!expanded)}
+            className=" rounded-lg bg-gray-300 p-1.5  hover:bg-slate-700/50 dark:bg-slate-700"
+          >
+            {expanded ? <TbChevronRightPipe /> : <TbChevronLeftPipe />}
+          </Button>
+        </div>
+        <ul className="flex-1 px-3">{children}</ul>
+      </nav>
     </SidebarContext.Provider>
   );
 };
