@@ -1,6 +1,6 @@
 import { LuCalendarDays } from "react-icons/lu";
 import { MdOutlineTimer } from "react-icons/md";
-import Button from "../../components/UI/Button";
+import Button from "../../components/UIO/Button";
 
 const SingleArticle = () => {
   return (

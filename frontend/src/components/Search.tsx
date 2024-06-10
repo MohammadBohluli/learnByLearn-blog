@@ -1,5 +1,5 @@
 import { CiSearch } from "react-icons/ci";
-import Button from "./UI/Button";
+import Button from "./UIO/Button";
 
 const Search = () => {
   return (

@@ -3,13 +3,13 @@ import { CiSearch } from "react-icons/ci";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
-import Button from "../components/UI/Button";
+import Button from "../components/UIO/Button";
 import DropDownThemeMenu from "../components/DropDownThemeMenu";
 import useStore from "../store/store";
 import { RiComputerLine } from "react-icons/ri";
 import Logo from "../components/Logo";
 import Navabr from "./Navabr";
-import Modal from "../components/UI/Modal";
+import Modal from "../components/UIO/Modal";
 import Search from "../components/Search";
 
 const Header = () => {
@@ -68,8 +68,8 @@ const Header = () => {
 
       <div
         className={`fixed left-0 right-0 top-0 flex  h-screen flex-col 
-                  bg-white/95 transition-transform duration-700 lg:static 
-                  lg:h-full lg:translate-x-0 dark:bg-slate-900/95 ${toggleNavbar}`}
+                  bg-white/95 transition-transform duration-700 dark:bg-slate-900/95 
+                  lg:static lg:h-full lg:translate-x-0 ${toggleNavbar}`}
       >
         <div className="p-3 lg:hidden">
           <Button onClick={() => setIsOpenNav(false)}>

@@ -1,8 +1,8 @@
 import { TbChevronLeftPipe, TbChevronRightPipe } from "react-icons/tb";
 import { ReactNode, createContext, useContext, useState } from "react";
 import Logo from "../../components/Logo";
-import Button from "../../components/UI/Button";
-import Tooltip from "../../components/UI/tooltip/Tooltip";
+import Button from "../../components/UIO/Button";
+import Tooltip from "../../components/UIO/tooltip/Tooltip";
 import { PropsSidebarItem, SidebarContextType } from "./type";
 
 const SidebarContext = createContext<SidebarContextType>({
@@ -17,7 +17,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
       <nav className="flex h-full flex-col border-l shadow-sm dark:border-slate-800">
         <div className="flex items-center justify-between p-4 pb-2">
           <Logo
-            className={`overflow-hidden transition-all lg:text-[38px] dark:text-white
+            className={`overflow-hidden transition-all dark:text-white lg:text-[38px]
                 ${expanded ? "w-52" : "w-0"}`}
           />
           <Button

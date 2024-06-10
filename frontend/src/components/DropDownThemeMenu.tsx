@@ -1,7 +1,7 @@
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 import { RiComputerLine } from "react-icons/ri";
-import Button from "./UI/Button";
+import Button from "./UIO/Button";
 import useDarkMode from "../hooks/useDarkMode";
 import { useState } from "react";
 
