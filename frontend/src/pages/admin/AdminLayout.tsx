@@ -13,6 +13,7 @@ const AdminLayout = () => {
           <Sidebar>
             {SIDEBAR_DATA.map((data) => (
               <SidebarItem
+                key={data.label}
                 icon={data.icon}
                 text={data.label}
                 active={data.active}
