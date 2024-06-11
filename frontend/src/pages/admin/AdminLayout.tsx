@@ -9,7 +9,7 @@ const AdminLayout = () => {
   return (
     <>
       <div className="grid grid-cols-[min-content_minmax(0,_1fr)]">
-        <aside className="flex h-screen max-w-min">
+        <aside className="flex h-full max-w-min">
           <Sidebar>
             {SIDEBAR_DATA.map((data) => (
               <SidebarItem
@@ -20,7 +20,7 @@ const AdminLayout = () => {
             ))}
           </Sidebar>
         </aside>
-        <main className="p-12">
+        <main className="p-5">
           <Outlet />
         </main>
       </div>
