@@ -1,4 +1,3 @@
-import { FaUsers } from "react-icons/fa6";
 import { Card, CardContent } from "./ui/card";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";

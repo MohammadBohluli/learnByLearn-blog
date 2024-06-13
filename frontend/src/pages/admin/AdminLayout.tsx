@@ -1,27 +1,23 @@
 import { Outlet } from "react-router-dom";
-import { SIDEBAR_DATA } from "../../data/constands";
 import useDarkMode from "../../hooks/useDarkMode";
-import Sidebar, { SidebarItem } from "../../layouts/sidebar/Sidebar";
+import AdminSidebar from "@/layouts/sidebar/AdminSidebar";
+import { useOnClickOutside } from "usehooks-ts";
+import { useRef, useState } from "react";
 
 const AdminLayout = () => {
+  const ref = useRef(null);
+  const [exp, setExp] = useState<boolean>(false);
   useDarkMode();
+  useOnClickOutside(ref, () => setExp(!exp));
 
   return (
     <>
-      <div className="grid grid-cols-[min-content_minmax(0,_1fr)]">
-        <aside className="flex h-full max-w-min">
-          <Sidebar>
-            {SIDEBAR_DATA.map((data) => (
-              <SidebarItem
-                key={data.label}
-                icon={data.icon}
-                text={data.label}
-                active={data.active}
-              />
-            ))}
-          </Sidebar>
+      <div className="relative grid">
+        <aside className=" bg-color-theme fixed z-50 h-screen" ref={ref}>
+          <AdminSidebar />
         </aside>
-        <main className="p-5">
+
+        <main className="mr-[70px] p-4">
           <Outlet />
         </main>
       </div>
@@ -30,3 +26,5 @@ const AdminLayout = () => {
 };
 
 export default AdminLayout;
+
+// grid grid-cols-[min-content_minmax(0,_1fr)]

@@ -2,7 +2,7 @@ import CardAdminDashboard from "@/components/CardAdminDashboard";
 import ArticleTable from "@/features/articles/article-table/page";
 import { FaUsers } from "react-icons/fa6";
 
-const Dashboard = () => {
+const ProfileAdminPage = () => {
   return (
     <div>
       <div className="flex flex-col gap-2">
@@ -14,8 +14,9 @@ const Dashboard = () => {
         />
       </div>
       <ArticleTable />
+      <ArticleTable />
     </div>
   );
 };
 
-export default Dashboard;
+export default ProfileAdminPage;

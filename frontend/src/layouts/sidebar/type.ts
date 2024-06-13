@@ -1,11 +1,20 @@
 import { ReactNode } from "react";
 
-export interface SidebarContextType {
-  expanded: boolean;
+export interface SidebarItem {
+  id: number;
+  label: string;
+  path: string;
+  icon: ReactNode;
+  active: boolean;
+  submenue: boolean;
 }
 
-export interface PropsSidebarItem {
-  icon: ReactNode;
-  text: string;
-  active?: boolean;
+export interface AdminSidebarItemProps {
+  item: SidebarItem;
+  selectedItem?: number;
+  onClick?: () => void;
+}
+
+export interface DesktopSidebarItemProps extends AdminSidebarItemProps {
+  expanded?: boolean;
 }

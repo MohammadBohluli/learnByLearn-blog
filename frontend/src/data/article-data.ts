@@ -72,7 +72,7 @@ export const articles: Article[] = [
   },
   {
     id: 9,
-    title: "Geologist IV",
+    title: "اموزش شی گرایی و مخلوقات قسمت اول",
     author: "Robby",
     published: "4/17/2024",
     updated: "2/10/2024",
