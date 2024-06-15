@@ -1,6 +1,6 @@
 import ArticleList from "../features/articles/ArticleList";
 
-const Blog = () => {
+const BlogPage = () => {
   return (
     <>
       <ArticleList />
@@ -8,4 +8,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogPage;

@@ -3,7 +3,6 @@ import { BiCategory } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { FaComments, FaUsers } from "react-icons/fa6";
 import { ImStatsDots } from "react-icons/im";
-import { LuSettings } from "react-icons/lu";
 import { RiArticleFill } from "react-icons/ri";
 
 const iconSize: number = 25;

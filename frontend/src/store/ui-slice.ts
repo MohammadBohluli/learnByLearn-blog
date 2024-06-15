@@ -1,9 +1,10 @@
 import { StateCreator } from "zustand";
-import { UISlice, UIState } from "../types/uiType";
+import { UISlice, UIState } from "./types/ui";
 
 const initialState: UIState = {
   theme: localStorage.getItem("theme"),
   isOpenDropDownTheme: false,
+  expandedSidebarAdmin: false,
 };
 
 export const createUISlice: StateCreator<
@@ -20,5 +21,9 @@ export const createUISlice: StateCreator<
   setIsOpenDropDownTheme: (isOpen: boolean) =>
     set((state) => {
       state.isOpenDropDownTheme = isOpen;
+    }),
+  setExpandedSidebarAdmin: (isExpanded) =>
+    set((state) => {
+      state.expandedSidebarAdmin = isExpanded;
     }),
 });

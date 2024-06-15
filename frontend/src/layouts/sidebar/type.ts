@@ -14,7 +14,3 @@ export interface AdminSidebarItemProps {
   selectedItem?: number;
   onClick?: () => void;
 }
-
-export interface DesktopSidebarItemProps extends AdminSidebarItemProps {
-  expanded?: boolean;
-}

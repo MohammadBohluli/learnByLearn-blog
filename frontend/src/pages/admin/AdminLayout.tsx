@@ -1,23 +1,22 @@
+import AdminSidebar from "@/layouts/sidebar/AdminSidebar";
+import useStore from "@/store/store";
 import { Outlet } from "react-router-dom";
 import useDarkMode from "../../hooks/useDarkMode";
-import AdminSidebar from "@/layouts/sidebar/AdminSidebar";
-import { useOnClickOutside } from "usehooks-ts";
-import { useRef, useState } from "react";
 
 const AdminLayout = () => {
-  const ref = useRef(null);
-  const [exp, setExp] = useState<boolean>(false);
+  const expandedSidebarAdmin = useStore((state) => state.expandedSidebarAdmin);
   useDarkMode();
-  useOnClickOutside(ref, () => setExp(!exp));
 
   return (
     <>
-      <div className="relative grid">
-        <aside className=" bg-color-theme fixed z-50 h-screen" ref={ref}>
+      <div className="">
+        <aside className=" bg-color-theme fixed z-50 h-screen">
           <AdminSidebar />
         </aside>
 
-        <main className="mr-[70px] p-4">
+        <main
+          className={`${expandedSidebarAdmin ? "lg:mr-[300px]" : "lg:mr-[70px]"} p-4 transition-all`}
+        >
           <Outlet />
         </main>
       </div>

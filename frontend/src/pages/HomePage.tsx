@@ -1,7 +1,7 @@
 import AboutMe from "../components/AboutMe";
 import PersonalCartInfo from "../components/PersonalCartInfo";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <div className="grid grid-cols-1 gap-14 md:grid-cols-2">
@@ -14,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

@@ -4,15 +4,17 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { DesktopSidebarItemProps } from "./type";
+import useStore from "@/store/store";
 import { Link } from "react-router-dom";
+import { AdminSidebarItemProps } from "../type";
 
 const DesktopSidebarItem = ({
   item,
-  expanded,
   onClick,
   selectedItem,
-}: DesktopSidebarItemProps) => {
+}: AdminSidebarItemProps) => {
+  const expandedSidebarAdmin = useStore((state) => state.expandedSidebarAdmin);
+
   return (
     <TooltipProvider delayDuration={100}>
       <Tooltip>
@@ -26,7 +28,7 @@ const DesktopSidebarItem = ({
             >
               {item.icon}
               <span
-                className={` overflow-hidden whitespace-nowrap transition-all ${expanded ? "mr-3 w-52" : "w-0"}`}
+                className={` overflow-hidden whitespace-nowrap transition-all ${expandedSidebarAdmin ? "mr-3 w-52" : "w-0"}`}
               >
                 {item.label}
               </span>
@@ -37,7 +39,7 @@ const DesktopSidebarItem = ({
         <TooltipContent
           side="left"
           sideOffset={17}
-          className={`${expanded ? "invisible" : "visible"} border-none bg-primary text-white`}
+          className={`${expandedSidebarAdmin ? "invisible" : "visible"} border-none bg-primary text-white`}
         >
           {item.label}
         </TooltipContent>

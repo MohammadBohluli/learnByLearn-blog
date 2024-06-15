@@ -1,8 +1,8 @@
 import { create } from "zustand";
-import { Store } from "../types/storeType";
-import { createUISlice } from "./ui-slice";
-import { immer } from "zustand/middleware/immer";
 import { devtools } from "zustand/middleware";
+import { immer } from "zustand/middleware/immer";
+import { Store } from "./types/store";
+import { createUISlice } from "./ui-slice";
 
 const useStore = create<Store>()(
   devtools(immer((...a) => ({ ...createUISlice(...a) }))),

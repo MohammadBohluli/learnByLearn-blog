@@ -1,5 +1,11 @@
+import AdminTitlePage from "@/components/AdminTitlePage";
+
 const CommentsAdminPage = () => {
-  return <div>نظرات</div>;
+  return (
+    <>
+      <AdminTitlePage>نظرات</AdminTitlePage>
+    </>
+  );
 };
 
 export default CommentsAdminPage;

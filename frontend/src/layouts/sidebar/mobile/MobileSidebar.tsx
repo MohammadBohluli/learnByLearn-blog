@@ -1,19 +1,19 @@
 import Logo from "@/components/Logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { SIDEBAR_DATA } from "@/data/constands";
-import { HiDotsHorizontal, HiMenu } from "react-icons/hi";
-import { BiLogOut } from "react-icons/bi";
-import { CgProfile } from "react-icons/cg";
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
-import AdminSidebarItem from "./AdminSidebarItem";
+import { SIDEBAR_DATA } from "@/data/constands";
 import { useState } from "react";
+import { BiLogOut } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
+import { HiDotsHorizontal, HiMenu } from "react-icons/hi";
+import MobileSidebarItem from "./MobileSidebarItem";
 
 const MobileSidebar = () => {
   // submit color blue for selected menu sidebar item
@@ -36,7 +36,7 @@ const MobileSidebar = () => {
         </SheetHeader>
         <ul>
           {SIDEBAR_DATA.map((item) => (
-            <AdminSidebarItem
+            <MobileSidebarItem
               item={item}
               key={item.id}
               selectedItem={selectedItem}

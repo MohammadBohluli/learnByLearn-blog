@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { AdminSidebarItemProps } from "./type";
+import { AdminSidebarItemProps } from "../type";
 
-const AdminSidebarItem = ({
+const MobileSidebarItem = ({
   item,
   onClick,
   selectedItem,
@@ -23,4 +23,4 @@ const AdminSidebarItem = ({
   );
 };
 
-export default AdminSidebarItem;
+export default MobileSidebarItem;

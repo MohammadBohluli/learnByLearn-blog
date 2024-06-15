@@ -1,5 +1,11 @@
+import AdminTitlePage from "@/components/AdminTitlePage";
+
 const UsersAdminPage = () => {
-  return <div>کاربران</div>;
+  return (
+    <>
+      <AdminTitlePage>کاربران</AdminTitlePage>
+    </>
+  );
 };
 
 export default UsersAdminPage;

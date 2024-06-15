@@ -1,5 +1,11 @@
+import AdminTitlePage from "@/components/AdminTitlePage";
+
 const StatsAdminPage = () => {
-  return <div>آمار</div>;
+  return (
+    <>
+      <AdminTitlePage>آمار</AdminTitlePage>
+    </>
+  );
 };
 
 export default StatsAdminPage;
