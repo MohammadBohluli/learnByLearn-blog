@@ -61,7 +61,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div>
+    <div className="mb-8">
       <div className="flex justify-between gap-2">
         {/* input search filtering */}
 

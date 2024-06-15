@@ -12,7 +12,7 @@ export interface CardAdminDashboardProps
 }
 
 export const cardAdminDashboardVariants = cva(
-  ["h-24 w-72 border-none p-4 font-bold"],
+  ["flex h-28 w-full border-none p-3 font-bold"],
   {
     variants: {
       variant: {
@@ -50,7 +50,7 @@ const CardAdminDashboard = ({
 }: CardAdminDashboardProps) => {
   return (
     <Card className={cn(cardAdminDashboardVariants({ variant }))}>
-      <CardContent className="flex items-center justify-between p-0">
+      <CardContent className="flex grow items-center justify-between p-0">
         <span>{icon}</span>
         <div className="flex flex-col text-center">
           <span className="text-2xl">{stats}</span>
