@@ -3,7 +3,7 @@ import React from "react";
 const AdminTitlePage = ({ children }: { children: React.ReactNode }) => {
   return (
     <div
-      className="mb-6 text-center text-4xl text-white
+      className="mb-6 text-center text-4xl dark:text-white
      sm:mr-20 sm:text-right lg:mr-5"
     >
       <h3>{children}</h3>

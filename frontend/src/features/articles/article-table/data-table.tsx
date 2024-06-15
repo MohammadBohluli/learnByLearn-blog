@@ -73,7 +73,10 @@ export function DataTable<TData, TValue>({
         {/* visibility column button */}
 
         <DropdownMenu>
-          <DropdownMenuTrigger className="flex gap-2">
+          <DropdownMenuTrigger
+            className="flex items-center justify-center 
+          gap-2 rounded-md p-1 hover:bg-gray-100 dark:hover:bg-gray-100/10"
+          >
             <span>ستون ها</span>
             <IoIosArrowDown />
           </DropdownMenuTrigger>

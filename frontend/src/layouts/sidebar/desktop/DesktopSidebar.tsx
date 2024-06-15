@@ -37,7 +37,7 @@ const DesktopSidebar = () => {
         />
         <Button
           onClick={() => setExpandedSidebarAdmin(!expandedSidebarAdmin)}
-          className="rounded-full text-white"
+          className="rounded-full dark:text-white"
           variant={"outline"}
           size={"icon"}
         >
