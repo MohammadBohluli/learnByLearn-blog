@@ -1,9 +1,9 @@
-import AdminTitlePage from "@/components/AdminTitlePage";
+import AdminTitle from "@/components/AdminTitle";
 
 const CommentsAdminPage = () => {
   return (
     <>
-      <AdminTitlePage>نظرات</AdminTitlePage>
+      <AdminTitle>نظرات</AdminTitle>
     </>
   );
 };

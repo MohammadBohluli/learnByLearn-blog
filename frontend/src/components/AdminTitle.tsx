@@ -1,6 +1,6 @@
 import React from "react";
 
-const AdminTitlePage = ({ children }: { children: React.ReactNode }) => {
+const AdminTitle = ({ children }: { children: React.ReactNode }) => {
   return (
     <div
       className="mb-6 text-center text-4xl dark:text-white
@@ -11,4 +11,4 @@ const AdminTitlePage = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default AdminTitlePage;
+export default AdminTitle;

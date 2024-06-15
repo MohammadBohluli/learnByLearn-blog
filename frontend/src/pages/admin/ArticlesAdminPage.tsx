@@ -1,10 +1,10 @@
-import AdminTitlePage from "@/components/AdminTitlePage";
+import AdminTitle from "@/components/AdminTitle";
 import ArticleTable from "@/features/articles/article-table/page";
 
 const ArticlesAdminPage = () => {
   return (
     <>
-      <AdminTitlePage>مقالات</AdminTitlePage>
+      <AdminTitle>مقالات</AdminTitle>
       <div>
         <ArticleTable />
       </div>

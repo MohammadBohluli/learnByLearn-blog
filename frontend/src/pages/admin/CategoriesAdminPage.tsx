@@ -1,9 +1,9 @@
-import AdminTitlePage from "@/components/AdminTitlePage";
+import AdminTitle from "@/components/AdminTitle";
 
 const CategoriesAdminPage = () => {
   return (
     <>
-      <AdminTitlePage>دسته بندی ها</AdminTitlePage>
+      <AdminTitle>دسته بندی ها</AdminTitle>
     </>
   );
 };

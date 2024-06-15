@@ -1,9 +1,9 @@
-import AdminTitlePage from "@/components/AdminTitlePage";
+import AdminTitle from "@/components/AdminTitle";
 
 const UsersAdminPage = () => {
   return (
     <>
-      <AdminTitlePage>کاربران</AdminTitlePage>
+      <AdminTitle>کاربران</AdminTitle>
     </>
   );
 };

@@ -1,9 +1,10 @@
-import AdminTitlePage from "@/components/AdminTitlePage";
+import AdminTitle from "@/components/AdminTitle";
+
 
 const ProfileAdminPage = () => {
   return (
     <>
-      <AdminTitlePage>پروفایل</AdminTitlePage>
+      <AdminTitle>پروفایل</AdminTitle>
     </>
   );
 };
