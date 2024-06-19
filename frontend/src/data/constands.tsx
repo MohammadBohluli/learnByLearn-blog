@@ -5,6 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import { FaComments, FaUsers } from "react-icons/fa6";
 import { ImStatsDots } from "react-icons/im";
 import { RiArticleFill } from "react-icons/ri";
+import { Option } from "@/components/ui/multiple-selector";
 
 const iconSize: number = 25;
 export const SIDEBAR_DATA: SidebarItem[] = [
@@ -84,4 +85,13 @@ export const CARD_ADMIN_DASHBOARD: CardAdminDashboardProps[] = [
     stats: 15,
     icon: <BiCategory size={50} />,
   },
+];
+
+////////////////////////////////////////////////
+export const CATEGORY_OPTIONS: Option[] = [
+  { label: "برنامه نویسی", value: "programming" },
+  { label: "لینوکس", value: "linux" },
+  { label: "هوش مصنوعی", value: "ai" },
+  { label: "فرانت اند", value: "frontend" },
+  { label: "بک اند", value: "backend" },
 ];
