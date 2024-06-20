@@ -17,6 +17,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { CATEGORY_OPTIONS } from "@/data/constands";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ArticleSchema, articleSchema, defaultValues } from "./shcema";
@@ -92,6 +94,45 @@ const CreateArticle = () => {
             </FormItem>
           )}
         />
+
+        {/* content input *****************************/}
+        <div className="mt-20">
+          <FormField
+            control={form.control}
+            name="content"
+            render={({ field }) => (
+              <FormItem>
+                <FormMessage />
+                <FormControl>
+                  <CKEditor
+                    {...field}
+                    editor={ClassicEditor}
+                    onChange={(_, editor) => {
+                      const data = editor.getData();
+                      form.setValue("content", data);
+                    }}
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+        </div>
+
+        {/* image input *****************************/}
+        <FormField
+          control={form.control}
+          name="title"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>عنوان</FormLabel>
+              <FormControl>
+                <Input {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
         <Button
           variant={"outline"}
           type="submit"
