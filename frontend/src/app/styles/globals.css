@@ -52,7 +52,7 @@
     @apply border-border;
   }
   body {
-    @apply paragraph-text-color bg-color-theme bg-background font-mikhak text-foreground;
+    @apply paragraph-text-color bg-background font-mikhak text-foreground;
   }
 }
 
@@ -87,4 +87,16 @@
   .personal-cart-shadow {
     @apply shadow-[5px_5px_0_0_rgba(59,130,246,0.5),10px_10px_0_0_rgba(59,130,246,0.4),15px_15px_0_0_rgba(59,130,246,0.3),20px_20px_0_0_rgba(59,130,246,0.2),25px_25px_0_0_rgba(59,130,246,0.1)];
   }
+}
+
+.ck-editor__editable {
+  height: 500px;
+}
+
+.ck-rounded-corners {
+  border-radius: 100px;
+}
+
+.ck.ck-editor__editable_inline {
+  border: none;
 }

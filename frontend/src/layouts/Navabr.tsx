@@ -5,7 +5,7 @@ const Navabr = () => {
     <nav>
       <ul
         className="flex flex-col gap-7 text-center text-2xl font-[500] 
-     dark:bg-slate-900 lg:flex-row "
+     dark:bg-slate-900 lg:flex-row"
       >
         <li>
           <Link to={"/"}>خانه</Link>
