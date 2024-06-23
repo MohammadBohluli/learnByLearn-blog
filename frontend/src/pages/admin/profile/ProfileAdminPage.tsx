@@ -1,16 +1,9 @@
-import AdminTitle from "@/components/AdminTitle";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import UserProfileForm from "@/features/user/UserProfileForm";
 
 const ProfileAdminPage = () => {
   return (
     <>
-      <AdminTitle>پروفایل</AdminTitle>
-      <Card>
-        <CardHeader>
-          <CardTitle>ویرایش اطلاعات شخصی</CardTitle>
-        </CardHeader>
-        <CardContent></CardContent>
-      </Card>
+      <UserProfileForm />
     </>
   );
 };

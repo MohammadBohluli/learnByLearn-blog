@@ -58,7 +58,6 @@ const CreateArticle = () => {
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
-                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -79,7 +78,6 @@ const CreateArticle = () => {
                       placeholder="دسته بندی..."
                     />
                   </FormControl>
-                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -119,7 +117,7 @@ const CreateArticle = () => {
               render={({ field }) => (
                 <FormItem>
                   <div className="flex flex-col">
-                    <div className="flere flex gap-2">
+                    <div className="flex gap-2">
                       <img
                         className="h-64 w-64 rounded-md"
                         src={

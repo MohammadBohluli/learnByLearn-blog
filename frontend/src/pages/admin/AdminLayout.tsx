@@ -15,7 +15,7 @@ const AdminLayout = () => {
         </aside>
 
         <main
-          className={`${expandedSidebarAdmin ? "lg:mr-[300px]" : "lg:mr-[70px]"} px-4 pb-4 pt-16  transition-all`}
+          className={`${expandedSidebarAdmin ? "lg:mr-[300px]" : "lg:mr-[70px]"} px-4 pb-4 pt-[70px] transition-all`}
         >
           <Outlet />
         </main>
