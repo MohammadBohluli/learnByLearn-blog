@@ -8,7 +8,11 @@ import ProfileAdminPage from "./pages/admin/profile/ProfileAdminPage";
 import StatsAdminPage from "./pages/admin/StatsAdminPage";
 import UsersAdminPage from "./pages/admin/UsersAdminPage";
 import CreateArticleAdminPage from "./pages/admin/articles/CreateArticleAdminPage";
-import LoginPage from "./pages/auth/login-page";
+import Login from "./pages/auth/login";
+import AuthLayout from "./pages/auth/auth-layout";
+import ForgotPassword from "./pages/auth/forgot-password";
+import Register from "./pages/auth/register";
+import ResetPassword from "./pages/auth/reset-password";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +25,16 @@ const router = createBrowserRouter([
       { path: "/projects", element: <ProjectsPage /> },
     ],
   },
-  { path: "/login", element: <LoginPage /> },
+  {
+    path: "/",
+    element: <AuthLayout />,
+    children: [
+      { path: "/login", element: <Login /> },
+      { path: "/register", element: <Register /> },
+      { path: "/resetPassword", element: <ResetPassword /> },
+      { path: "/forgotPassword", element: <ForgotPassword /> },
+    ],
+  },
   {
     path: "/profile",
     element: <AdminLayout />,
