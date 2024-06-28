@@ -56,7 +56,7 @@ export default function Register() {
             ثبت نام
           </Button>
         </form>
-        <div className="mt-2 flex justify-center gap-2">
+        <div className="mt-4 flex justify-center gap-2">
           <p>قبلا ثبت نام کردی ؟</p>
           <Link to={"/"} className="text-blue-500">
             وارد شوید
