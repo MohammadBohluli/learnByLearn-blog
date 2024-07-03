@@ -18,15 +18,15 @@ import MobileSidebarItem from "./MobileSidebarItem";
 const MobileSidebar = () => {
   // submit color blue for selected menu sidebar item
   const [selectedItem, setSelectedItem] = useState<number>(0);
-  const [openSidebar, setOpenSidebar] = useState<boolean>(false);
+  const [openMobileSidebar, setOpenMobileSidebar] = useState<boolean>(false);
 
   return (
-    <Sheet open={openSidebar} onOpenChange={setOpenSidebar}>
+    <Sheet open={openMobileSidebar} onOpenChange={setOpenMobileSidebar}>
       <SheetTrigger asChild>
         <Button
           variant={"outline"}
           size={"icon"}
-          className="fixed right-5 top-5 z-50 rounded-full"
+          className="fixed bottom-5 right-5 rounded-full"
         >
           <HiMenu size={30} />
         </Button>
@@ -41,10 +41,8 @@ const MobileSidebar = () => {
               item={item}
               key={item.id}
               selectedItem={selectedItem}
-              onClick={() => {
-                setSelectedItem(item.id);
-                setOpenSidebar(false);
-              }}
+              onSelectedItem={() => setSelectedItem(item.id)}
+              onOpenMobileSidebar={() => setOpenMobileSidebar(false)}
             />
           ))}
         </ul>

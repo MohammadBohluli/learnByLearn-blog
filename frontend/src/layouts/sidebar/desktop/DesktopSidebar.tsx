@@ -1,3 +1,4 @@
+import Logo from "@/components/Logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -8,53 +9,25 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { SIDEBAR_DATA } from "@/data/constands";
-import useStore from "@/store/store";
 import { useState } from "react";
 import { BiLogOut } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { HiDotsHorizontal } from "react-icons/hi";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import DesktopSidebarItem from "./DesktopSidebarItem";
-import Logo from "@/components/Logo";
 
 const DesktopSidebar = () => {
-  const { expandedSidebarAdmin, setExpandedSidebarAdmin } = useStore(
-    (state) => ({
-      expandedSidebarAdmin: state.expandedSidebarAdmin,
-      setExpandedSidebarAdmin: state.setExpandedSidebarAdmin,
-    }),
-  );
   const [selectedItem, setSelectedItem] = useState<number>(0);
 
   return (
-    <nav className=" flex h-full flex-col border-l shadow-sm dark:border-slate-800">
-      <div
-        className={`flex items-center p-4 pb-2 ${expandedSidebarAdmin ? "justify-between" : "justify-center"}`}
-      >
-        <Logo
-          className={`overflow-hidden transition-all dark:text-white lg:text-[38px]
-                ${expandedSidebarAdmin ? "w-52" : "w-0"}`}
-        />
-        <Button
-          onClick={() => setExpandedSidebarAdmin(!expandedSidebarAdmin)}
-          className="rounded-full dark:text-white"
-          variant={"outline"}
-          size={"icon"}
-        >
-          {expandedSidebarAdmin ? (
-            <IoIosArrowForward size={20} />
-          ) : (
-            <IoIosArrowBack size={20} />
-          )}
-        </Button>
-      </div>
+    <nav className=" flex h-full min-w-72 flex-col border-l shadow-sm dark:border-slate-800">
+      <Logo className="text-center dark:text-white lg:text-[38px]" />
       <ul className="flex-1 px-3">
         {SIDEBAR_DATA.map((item) => (
           <DesktopSidebarItem
-            selectedItem={selectedItem}
-            onClick={() => setSelectedItem(item.id)}
-            item={item}
             key={item.id}
+            item={item}
+            selectedItem={selectedItem}
+            onSelectedItem={() => setSelectedItem(item.id)}
           />
         ))}
       </ul>
@@ -78,7 +51,7 @@ const DesktopSidebar = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent className="min-w-[10rem]">
             <DropdownMenuItem
-              className=" cursor-pointer justify-end
+              className="cursor-pointer justify-end
                gap-2 rounded-md p-2 hover:text-white focus:bg-primary"
             >
               <span>پروفایل</span>

@@ -1,29 +1,21 @@
 import AdminSidebar from "@/layouts/sidebar/AdminSidebar";
-import useStore from "@/store/store";
 import { Outlet } from "react-router-dom";
 import useDarkMode from "../../hooks/useDarkMode";
 
 const AdminLayout = () => {
-  const expandedSidebarAdmin = useStore((state) => state.expandedSidebarAdmin);
   useDarkMode();
 
   return (
     <>
-      <div className="">
-        <aside className=" bg-color-theme fixed z-50 h-screen">
-          <AdminSidebar />
-        </aside>
+      <aside className=" bg-color-theme fixed right-0 z-50 h-screen">
+        <AdminSidebar />
+      </aside>
 
-        <main
-          className={`${expandedSidebarAdmin ? "lg:mr-[300px]" : "lg:mr-[70px]"} px-4 pb-4 pt-[70px] transition-all`}
-        >
-          <Outlet />
-        </main>
-      </div>
+      <main className="p-4 lg:mr-[300px]">
+        <Outlet />
+      </main>
     </>
   );
 };
 
 export default AdminLayout;
-
-// grid grid-cols-[min-content_minmax(0,_1fr)]

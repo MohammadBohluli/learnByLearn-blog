@@ -1,50 +1,80 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import useStore from "@/store/store";
+import { useState } from "react";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { AdminSidebarItemProps } from "../type";
 
 const DesktopSidebarItem = ({
   item,
-  onClick,
+  onSelectedItem,
   selectedItem,
 }: AdminSidebarItemProps) => {
-  const expandedSidebarAdmin = useStore((state) => state.expandedSidebarAdmin);
+  const [expandSubMenu, setExpandSubMenu] = useState<boolean>(false);
 
   return (
-    <TooltipProvider delayDuration={100}>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Link to={item.path}>
-            <li
-              onClick={onClick}
-              className={`group my-1 flex cursor-pointer items-center
-              rounded-md px-3 py-2 font-medium transition-colors
-              ${selectedItem === item.id ? "bg-blue-600 text-white" : "hover:bg-blue-600 hover:text-white"}`}
-            >
+    <div>
+      {item.submenue ? (
+        <li
+          onClick={() => {
+            setExpandSubMenu(!expandSubMenu);
+            onSelectedItem?.(item.id);
+          }}
+          className={`group my-1 flex cursor-pointer flex-col rounded-md px-3 py-2 font-medium
+            ${selectedItem === item.id ? "bg-blue-600 text-white" : "hover:bg-blue-600 hover:text-white"}`}
+        >
+          <div className="flex w-full items-center justify-between">
+            <div className="flex">
               {item.icon}
               <span
-                className={` overflow-hidden whitespace-nowrap transition-all ${expandedSidebarAdmin ? "mr-3 w-52" : "w-0"}`}
+                className={`mr-3 overflow-hidden whitespace-nowrap transition-all`}
               >
                 {item.label}
               </span>
-            </li>
-          </Link>
-        </TooltipTrigger>
+            </div>
+            <div>
+              {expandSubMenu ? (
+                <IoIosArrowUp size={20} />
+              ) : (
+                <IoIosArrowDown size={20} />
+              )}
+            </div>
+          </div>
 
-        <TooltipContent
-          side="left"
-          sideOffset={17}
-          className={`${expandedSidebarAdmin ? "invisible" : "visible"} border-none bg-primary text-white`}
-        >
-          {item.label}
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
+          {expandSubMenu && (
+            <ul
+              className="mt-3 flex w-full
+             flex-col items-start gap-3 rounded-md bg-background p-3"
+            >
+              {item.submenueItem?.map((subItem) => (
+                <Link
+                  to={subItem.path}
+                  key={subItem.id}
+                  className="w-full rounded-md p-2 hover:bg-blue-600
+             "
+                >
+                  <li>{subItem.label}</li>
+                </Link>
+              ))}
+            </ul>
+          )}
+        </li>
+      ) : (
+        <Link to={item.path}>
+          <li
+            onClick={() => onSelectedItem?.(item.id)}
+            className={`group my-1 flex cursor-pointer items-center
+                   rounded-md px-3 py-2 font-medium
+                   ${selectedItem === item.id ? "bg-blue-600 text-white" : "hover:bg-blue-600 hover:text-white"}`}
+          >
+            {item.icon}
+            <span
+              className={` mr-3 overflow-hidden whitespace-nowrap transition-all`}
+            >
+              {item.label}
+            </span>
+          </li>
+        </Link>
+      )}
+    </div>
   );
 };
 

@@ -4,13 +4,15 @@ export interface SidebarItem {
   id: number;
   label: string;
   path: string;
-  icon: ReactNode;
-  active: boolean;
-  submenue: boolean;
+  icon?: ReactNode;
+  active?: boolean;
+  submenue?: boolean;
+  submenueItem?: SidebarItem[];
 }
 
 export interface AdminSidebarItemProps {
   item: SidebarItem;
   selectedItem?: number;
-  onClick?: () => void;
+  onSelectedItem?: (itemId: number) => void;
+  onOpenMobileSidebar?: () => void;
 }

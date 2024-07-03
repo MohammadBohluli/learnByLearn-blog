@@ -23,7 +23,11 @@ export const SIDEBAR_DATA: SidebarItem[] = [
     path: "/profile/articles",
     icon: <RiArticleFill size={iconSize} />,
     active: true,
-    submenue: false,
+    submenue: true,
+    submenueItem: [
+      { id: 1, label: "لیست مقالات", path: "/profile/articles" },
+      { id: 2, label: "نوشتن مقاله", path: "/profile/articles/create" },
+    ],
   },
   {
     id: 3,
