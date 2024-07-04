@@ -10,7 +10,7 @@ export interface SidebarItem {
   submenueItem?: SidebarItem[];
 }
 
-export interface AdminSidebarItemProps {
+export interface SidebarItemProps {
   item: SidebarItem;
   selectedItem?: number;
   onSelectedItem?: (itemId: number) => void;

@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { Link } from "react-router-dom";
-import { AdminSidebarItemProps } from "../type";
+import { SidebarItemProps } from "../type";
 
 const DesktopSidebarItem = ({
   item,
   onSelectedItem,
   selectedItem,
-}: AdminSidebarItemProps) => {
+}: SidebarItemProps) => {
   const [expandSubMenu, setExpandSubMenu] = useState<boolean>(false);
 
   return (

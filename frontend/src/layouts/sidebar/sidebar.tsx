@@ -1,8 +1,8 @@
 import { useMediaQuery } from "usehooks-ts";
-import DesktopSidebar from "./desktop/DesktopSidebar";
-import MobileSidebar from "./mobile/MobileSidebar";
+import DesktopSidebar from "./desktop/desktop-sidebar";
+import MobileSidebar from "./mobile/mobile-sidebar";
 
-const AdminSidebar = () => {
+const Sidebar = () => {
   const isDesktop = useMediaQuery("(min-width: 1024px)");
 
   if (isDesktop) return <DesktopSidebar />;
@@ -14,4 +14,4 @@ const AdminSidebar = () => {
   );
 };
 
-export default AdminSidebar;
+export default Sidebar;

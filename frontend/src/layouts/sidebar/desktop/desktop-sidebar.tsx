@@ -13,7 +13,7 @@ import { useState } from "react";
 import { BiLogOut } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { HiDotsHorizontal } from "react-icons/hi";
-import DesktopSidebarItem from "./DesktopSidebarItem";
+import DesktopSidebarItem from "./desktop-sidebar-item";
 
 const DesktopSidebar = () => {
   const [selectedItem, setSelectedItem] = useState<number>(0);

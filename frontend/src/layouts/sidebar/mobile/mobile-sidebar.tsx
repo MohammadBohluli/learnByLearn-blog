@@ -13,7 +13,7 @@ import { useState } from "react";
 import { BiLogOut } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { HiDotsHorizontal, HiMenu } from "react-icons/hi";
-import MobileSidebarItem from "./MobileSidebarItem";
+import MobileSidebarItem from "./mobile-sidebar-item";
 
 const MobileSidebar = () => {
   // submit color blue for selected menu sidebar item
