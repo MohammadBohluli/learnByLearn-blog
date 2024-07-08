@@ -1,15 +1,20 @@
 import { Link } from "react-router-dom";
-import { cn } from "../utils/utils";
+import React from "react";
+import { cn } from "@/lib/utils";
 
-const Logo = ({ className = "" }: { className?: string }) => {
+interface LogoProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+const Logo = ({ className, ...props }: LogoProps) => {
   return (
     <div
       className={cn(
-        " font-vibes text-[27px] md:text-[35px] lg:text-[45px]",
-        `${className ? className : ""}`,
+        "font-vibes text-[27px] font-bold md:text-[35px] lg:text-[40px]",
+        "bg-gradient-to-r from-emerald-500 to-lime-600 bg-clip-text text-transparent ",
+        className,
       )}
+      {...props}
     >
-      <Link to={"/"}>LearnByLearn</Link>
+      <Link to={"/"}>My Blog</Link>
     </div>
   );
 };

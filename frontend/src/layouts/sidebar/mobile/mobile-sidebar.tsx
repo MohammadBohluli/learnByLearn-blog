@@ -33,7 +33,7 @@ const MobileSidebar = () => {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader className="items-center">
-          <Logo className="my-2 text-4xl font-bold dark:text-white" />
+          <Logo className="py-3 text-3xl" />
         </SheetHeader>
         <ul>
           {SIDEBAR_DATA.map((item) => (

@@ -20,7 +20,7 @@ const DesktopSidebar = () => {
 
   return (
     <nav className=" flex h-full min-w-72 flex-col border-l shadow-sm dark:border-slate-800">
-      <Logo className="text-center dark:text-white lg:text-[38px]" />
+      <Logo className="p-3 text-center" />
       <ul className="flex-1 px-3">
         {SIDEBAR_DATA.map((item) => (
           <DesktopSidebarItem
