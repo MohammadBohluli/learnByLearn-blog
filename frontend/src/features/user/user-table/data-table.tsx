@@ -72,9 +72,9 @@ export function DataTable<TData, TValue>({
         <DropdownMenu>
           <DropdownMenuTrigger
             className="flex items-center justify-center gap-2 rounded-md border
-            border-input bg-background p-1 hover:bg-accent hover:text-accent-foreground"
+            border-input bg-background px-2 py-1 hover:bg-accent hover:text-accent-foreground"
           >
-            <span>ستون ها</span>
+            <span className="text-nowrap">ستون ها</span>
             <IoIosArrowDown />
           </DropdownMenuTrigger>
           <DropdownMenuContent className="ml-5">

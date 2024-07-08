@@ -31,7 +31,7 @@ export const SIDEBAR_DATA: SidebarItem[] = [
   },
   {
     id: 3,
-    label: "کاربران",
+    label: "مدیریت کاربران",
     path: "/profile/users",
     icon: <FaUsers size={iconSize} />,
     active: false,

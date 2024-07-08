@@ -1,5 +1,5 @@
-export { default as HomePage } from "./HomePage";
-export { default as BlogPage } from "./BlogPage";
-export { default as AboutPage } from "./AboutPage";
-export { default as ProjectsPage } from "./ProjectsPage";
-export { default as Layout } from "./Layout";
+export { default as HomePage } from "./home-page";
+export { default as BlogPage } from "./blog-page";
+export { default as AboutPage } from "./about-page";
+export { default as ProjectsPage } from "./projects-page";
+export { default as Layout } from "./layout";

@@ -8,7 +8,7 @@ import DropDownThemeMenu from "../components/DropDownThemeMenu";
 import useStore from "../store/store";
 import { RiComputerLine } from "react-icons/ri";
 import Logo from "../components/logo";
-import Navabr from "./Navabr";
+import Navabr from "./navbar";
 import Modal from "../components/UIO/Modal";
 import Search from "../components/Search";
 

@@ -43,7 +43,7 @@ const UserProfileForm = () => {
   return (
     <Card className="mx-auto max-w-xl">
       <CardHeader>
-        <CardTitle>پروفایل</CardTitle>
+        <CardTitle>پروفایل کاربری</CardTitle>
       </CardHeader>
       <CardContent>
         <Form {...form}>

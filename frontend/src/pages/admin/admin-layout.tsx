@@ -1,6 +1,6 @@
+import Sidebar from "@/layouts/sidebar/sidebar";
 import { Outlet } from "react-router-dom";
 import useDarkMode from "../../hooks/useDarkMode";
-import Sidebar from "@/layouts/sidebar/sidebar";
 
 const AdminLayout = () => {
   useDarkMode();
