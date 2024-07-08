@@ -1,7 +1,7 @@
-import CreateArticle from "@/features/articles/CreateArticle";
+import CreateArticleForm from "@/features/articles/CreateArticle";
 
 const CreateArticleAdminPage = () => {
-  return <CreateArticle />;
+  return <CreateArticleForm />;
 };
 
 export default CreateArticleAdminPage;

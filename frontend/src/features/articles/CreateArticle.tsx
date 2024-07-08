@@ -1,3 +1,4 @@
+import RowForm from "@/components/RowForm";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -18,16 +19,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { CATEGORY_OPTIONS } from "@/data/constands";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
+import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { ArticleSchema, articleSchema, defaultValues } from "./shcema";
-import RowForm from "@/components/RowForm";
 import { IoMdClose } from "react-icons/io";
+import { ArticleSchema, articleSchema, defaultValues } from "./shcema";
 
-const CreateArticle = () => {
+const CreateArticleForm = () => {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
 
   const form = useForm<ArticleSchema>({
@@ -42,11 +41,8 @@ const CreateArticle = () => {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="grid grid-cols-1 lg:grid-cols-2"
-      >
-        <div className="md:ml-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="">
+        <div className="grid gap-3 md:grid-cols-2">
           {/* title input *****************************/}
           <RowForm>
             <FormField
@@ -58,10 +54,12 @@ const CreateArticle = () => {
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
           </RowForm>
+
           {/* category input *****************************/}
           <RowForm>
             <FormField
@@ -78,10 +76,12 @@ const CreateArticle = () => {
                       placeholder="دسته بندی..."
                     />
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
           </RowForm>
+
           {/* status input *****************************/}
           <RowForm>
             <FormField
@@ -95,8 +95,8 @@ const CreateArticle = () => {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="وضعیت مقاله" />
+                      <SelectTrigger className="flex-row-reverse">
+                        <SelectValue />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -109,6 +109,7 @@ const CreateArticle = () => {
               )}
             />
           </RowForm>
+
           {/* image input *****************************/}
           <RowForm>
             <FormField
@@ -172,23 +173,17 @@ const CreateArticle = () => {
         </div>
 
         {/* content input *****************************/}
-        <RowForm className=" bg-black">
+        <RowForm>
           <FormField
             control={form.control}
             name="content"
             render={({ field }) => (
-              <FormItem className="rounded-lg">
-                <FormMessage />
+              <FormItem>
+                <FormLabel>متن مقاله</FormLabel>
                 <FormControl>
-                  <CKEditor
-                    {...field}
-                    editor={ClassicEditor}
-                    onChange={(_, editor) => {
-                      const data = editor.getData();
-                      form.setValue("content", data);
-                    }}
-                  />
+                  <Textarea className="min-h-64" {...field} />
                 </FormControl>
+                <FormMessage />
               </FormItem>
             )}
           />
@@ -209,4 +204,4 @@ const CreateArticle = () => {
   );
 };
 
-export default CreateArticle;
+export default CreateArticleForm;
