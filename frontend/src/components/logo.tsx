@@ -8,7 +8,7 @@ const Logo = ({ className, ...props }: LogoProps) => {
   return (
     <div
       className={cn(
-        "font-vibes text-[27px] font-bold md:text-[35px] lg:text-[40px]",
+        "p-2 font-vibes text-[27px] font-bold md:text-[35px] lg:text-[40px]",
         "bg-gradient-to-r from-emerald-500 to-lime-600 bg-clip-text text-transparent ",
         className,
       )}

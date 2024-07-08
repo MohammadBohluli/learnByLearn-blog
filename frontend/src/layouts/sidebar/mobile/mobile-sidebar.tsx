@@ -1,4 +1,4 @@
-import Logo from "@/components/Logo";
+import Logo from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
@@ -33,7 +33,7 @@ const MobileSidebar = () => {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader className="items-center">
-          <Logo className="py-3 text-3xl" />
+          <Logo className="text-3xl" />
         </SheetHeader>
         <ul>
           {SIDEBAR_DATA.map((item) => (
